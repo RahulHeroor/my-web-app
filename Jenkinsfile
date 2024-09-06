@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir('package.json') {  // Adjust the path as needed
+                dir('my-web-app') {  // Adjust the path as needed
                     sh 'npm install'
                 }
             }
