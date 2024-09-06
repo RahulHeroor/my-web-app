@@ -18,7 +18,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('test/app.test.js') {  // Adjust the path as needed
+                dir('test') {  // Adjust the path as needed
                     sh 'npm test || true'  // Continue pipeline even if tests fail
                 }
             }
