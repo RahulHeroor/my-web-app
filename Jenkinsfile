@@ -26,7 +26,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('path/to/project') {  // Adjust the path as needed
+                dir('Dockerfile') {  // Adjust the path as needed
                     sh 'docker build -t my-node-app .'
                 }
             }
