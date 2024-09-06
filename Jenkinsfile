@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir('path/to/project') {  // Adjust the path as needed
+                dir('package.json') {  // Adjust the path as needed
                     sh 'npm install'
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('path/to/project') {  // Adjust the path as needed
+                dir('test/app.test.js') {  // Adjust the path as needed
                     sh 'npm test || true'  // Continue pipeline even if tests fail
                 }
             }
