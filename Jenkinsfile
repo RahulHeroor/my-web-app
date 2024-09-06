@@ -10,19 +10,25 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                dir('path/to/project') {  // Adjust the path as needed
+                    sh 'npm install'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test || true' // Continue pipeline even if tests fail
+                dir('path/to/project') {  // Adjust the path as needed
+                    sh 'npm test || true'  // Continue pipeline even if tests fail
+                }
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t my-node-app .'
+                dir('path/to/project') {  // Adjust the path as needed
+                    sh 'docker build -t my-node-app .'
+                }
             }
         }
 
