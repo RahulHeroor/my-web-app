@@ -26,9 +26,9 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('my-web-app') {  // Adjust if Dockerfile is located in a different directory
+                // Adjust if Dockerfile is located in a different directory
                     sh 'docker build -t my-node-app .'
-                }
+                
             }
         }
 
