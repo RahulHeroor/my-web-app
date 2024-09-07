@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir('my-web-app') {  // Adjust the path as needed
+                dir('my-web-app') {  // Adjust if dependencies are located in a different directory
                     sh 'npm install'
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('test') {  // Adjust the path as needed
+                dir('test') {  // Adjust if tests are located in a different directory
                     sh 'npm test || true'  // Continue pipeline even if tests fail
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('my-web-app/dockerf') {  // Adjust the path as needed
+                dir('my-web-app') {  // Adjust if Dockerfile is located in a different directory
                     sh 'docker build -t my-node-app .'
                 }
             }
